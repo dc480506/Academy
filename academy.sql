@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 26, 2020 at 08:37 PM
+-- Generation Time: Jan 29, 2020 at 11:17 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -78,10 +78,7 @@ CREATE TABLE `course_content` (
 -- Dumping data for table `course_content`
 --
 
-INSERT INTO `course_content` (`cid`, `month`, `week`, `day`, `videono`, `videoname`) VALUES
-(1, 1, 1, 1, 1, 'file_example_MP4_480_1_5MG.mp4'),
-(1, 1, 1, 1, 2, 'SampleVideo_1280x720_2mb.mp4'),
-(1, 1, 1, 2, 1, 'SampleVideo_1280x720_2mb.mp4');
+
 
 -- --------------------------------------------------------
 
