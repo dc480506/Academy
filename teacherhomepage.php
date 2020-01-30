@@ -142,8 +142,10 @@ if(!isset($_SESSION['uid']) || $_SESSION['type']!='fac'){
                             <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab--1">
                                 <div class="academy-tab-content">
                                     <!-- Tab Text -->
+                                    <form action="include/addpdf.php" method="post" enctype="multipart/form-data">
+
                                     <div class="academy-tab-text">
-                                        Month:<select>
+                                        Month:<select name="month2">
   												<option value="1">Month-1</option>
   												<option value="2">Month-2</option>
   												<option value="3">Month-3</option>
@@ -156,7 +158,7 @@ if(!isset($_SESSION['uid']) || $_SESSION['type']!='fac'){
 										</select>
 
 										Week:
-										<select>
+										<select name="week2">
   												<option value="1">Week-1</option>
   												<option value="2">Week-2</option>
   												<option value="3">Week-3</option>
@@ -165,7 +167,7 @@ if(!isset($_SESSION['uid']) || $_SESSION['type']!='fac'){
 
 
 										Day:
-										<select>
+										<select name="day2">
   												<option value="1">Day-1</option>
   												<option value="2">Day-2</option>
   												<option value="3">Day-3</option>
@@ -177,10 +179,9 @@ if(!isset($_SESSION['uid']) || $_SESSION['type']!='fac'){
 										<br>
 										<!-- https://www.w3schools.com/php/php_file_upload.asp -->
 
-										<form action="upload.php" method="post" enctype="multipart/form-data">
 											    Select Assignment/Notes to upload:
-											    <input type="file" name="fileToUpload" id="fileToUpload">
-											    <input type="submit" value="Upload Document" name="submit">
+											    <input type="file" name="fileToUpload2" id="fileToUpload">
+											    <input type="submit" value="Upload Document" name="submitPdf">
 										</form>
                                     </div>
                                 </div>

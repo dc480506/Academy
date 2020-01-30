@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 29, 2020 at 11:17 PM
+-- Generation Time: Jan 30, 2020 at 06:46 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -76,6 +76,27 @@ CREATE TABLE `course_content` (
 
 --
 -- Dumping data for table `course_content`
+--
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `course_pdf`
+--
+
+CREATE TABLE `course_pdf` (
+  `cid` int(11) NOT NULL,
+  `month` int(11) NOT NULL,
+  `week` int(11) NOT NULL,
+  `day` int(11) NOT NULL,
+  `pdfno` int(11) NOT NULL,
+  `pdfname` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `course_pdf`
 --
 
 
@@ -193,6 +214,12 @@ ALTER TABLE `course_content`
   ADD PRIMARY KEY (`cid`,`month`,`week`,`day`,`videono`) USING BTREE;
 
 --
+-- Indexes for table `course_pdf`
+--
+ALTER TABLE `course_pdf`
+  ADD PRIMARY KEY (`cid`,`month`,`week`,`day`,`pdfno`);
+
+--
 -- Indexes for table `role`
 --
 ALTER TABLE `role`
@@ -234,6 +261,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `course_content`
   ADD CONSTRAINT `course_content_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `courses` (`cid`);
+
+--
+-- Constraints for table `course_pdf`
+--
+ALTER TABLE `course_pdf`
+  ADD CONSTRAINT `course_course_pdf` FOREIGN KEY (`cid`) REFERENCES `courses` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `student_admin_course`

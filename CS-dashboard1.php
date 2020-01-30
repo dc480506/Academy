@@ -202,11 +202,29 @@
                                                   <source id="mp4" src="'.$base_dir.$row['cid']."/Month".$row['month']."/Week".$row['week']."/Day".$row['day']."/".$row['videoname'].'" type="video/mp4">
                                                       <p>Your user agent does not support the HTML5 Video element.</p>
                                                   </video>
-          
+                                                   
                                                   <br>
                                                   ';
                                               }
                                           }
+                                          $sql="SELECT * FROM course_pdf WHERE cid=1 AND month=$month AND week=$week AND day=$day ORDER BY pdfno";
+                                          $result=mysqli_query($conn,$sql);
+                                          if(mysqli_num_rows($result)<1){
+                                               echo "No Notes available at this moment!! Check back later!!";
+                                           }else{
+                                             echo '
+                                             Additional Notes:
+                                             <br>
+                                             ';
+                                               while($row=mysqli_fetch_assoc($result)){
+                                   
+                                               echo '
+                                                                <a href="'.$base_dir.$row['cid']."/Month".$row['month']."/Week".$row['week']."/Day".$row['day']."/".$row['pdfname'].'">'.$row['pdfname'].'</a>
+                                                                  
+                                                                 <br>
+                                                                 ';
+                                                             }
+                                                         }
                            echo'
                            </div>
                            </div>
